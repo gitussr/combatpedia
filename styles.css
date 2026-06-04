@@ -559,6 +559,10 @@ nav {
     margin: 1rem 0 2rem;
 }
 
+.pill-grid a {
+    text-decoration: none;
+}
+
 .pill {
     font-family: var(--font-condensed);
     font-size: 12px;
@@ -572,6 +576,7 @@ nav {
     background: var(--white);
     cursor: default;
     transition: all 0.12s;
+    cursor: pointer;
 }
 
 .pill:hover {
