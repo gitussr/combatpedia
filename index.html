@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combat Sports Encyclopedia | Combatpedia</title>
+<link rel="icon" type="image/x-icon" href="./logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showSection('home')">
+    <img src="./images/logo.png" alt="Logo" width="70" style="vertical-align: middle;">
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" onclick="showSection('home')" data-section="home">Home</a></li>
+    <li><a href="#" onclick="showSection('mma')" data-section="mma">MMA</a></li>
+    <li><a href="#" onclick="showSection('ufc')" data-section="ufc">UFC</a></li>
+    <li><a href="#" onclick="showSection('submissions')" data-section="submissions">Submissions</a></li>
+    <li><a href="#" onclick="showSection('bjj')" data-section="bjj">BJJ</a></li>
+    <li><a href="#" onclick="showSection('fighters')" data-section="fighters">Fighters</a></li>
+    <li><a href="#" onclick="showSection('tools')" data-section="tools">Tools</a></li>
+  </ul>
+  <div class="nav-search">
+    <input type="text" id="search-input" placeholder="Search encyclopedia…" autocomplete="off">
+    <span class="search-icon">⌕</span>
+    <div id="search-results"></div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Disciplines</div>
+      <a class="sidebar-link" onclick="showSection('home')"><span class="dot"></span>Overview</a>
+      <a class="sidebar-link" onclick="showSection('mma')"><span class="dot"></span>MMA Basics & Positions</a>
+      <a class="sidebar-link" onclick="showSection('ufc')"><span class="dot"></span>UFC Encyclopedia</a>
+      <a class="sidebar-link" onclick="showSection('submissions')"><span class="dot"></span>Submissions</a>
+      <a class="sidebar-link" onclick="showSection('bjj')"><span class="dot"></span>Brazilian Jiu-Jitsu</a>
+      <a class="sidebar-link" onclick="showSection('wrestling')"><span class="dot"></span>Wrestling</a>
+      <a class="sidebar-link" onclick="showSection('muaythai')"><span class="dot"></span>Muay Thai</a>
+      <a class="sidebar-link" onclick="showSection('boxing')"><span class="dot"></span>Boxing</a>
+      <a class="sidebar-link" onclick="showSection('judo')"><span class="dot"></span>Judo</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Reference</div>
+      <a class="sidebar-link" onclick="showSection('fighters')"><span class="dot"></span>Famous Fighters</a>
+      <a class="sidebar-link" onclick="showSection('glossary')"><span class="dot"></span>Glossary</a>
+      <a class="sidebar-link" onclick="showSection('tools')"><span class="dot"></span>Interactive Tools</a>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content-area">
+
+    <!-- ── HOME ── -->
+    <div class="section active" id="section-home">
+      <div class="hero">
+        <div class="hero-tag">The Complete Reference</div>
+        <h1>COMBAT<br>SPORTS<br>ENCYCLOPEDIA</h1>
+        <p class="hero-sub">Train smarter. Fight with knowledge. The ultimate reference for fighters, fans, and beginners.</p>
+      </div>
+
+      <h3>Browse by Discipline</h3>
+      <div class="category-grid">
+        <div class="cat-card" onclick="showSection('ufc')">
+          <span class="cat-icon"><img src="./images/gloves.png" alt="UFC" width="40"></span>
+          <span class="cat-name">UFC</span>
+        </div>
+        <div class="cat-card" onclick="showSection('mma')">
+          <span class="cat-icon"><img src="./images/mma.png" alt="MMA" width="40"></span>
+          <span class="cat-name">MMA</span>
+        </div>
+        <div class="cat-card" onclick="showSection('boxing')">
+          <span class="cat-icon"><img src="./images/boxing-gloves.png" alt="Boxing" width="40"></span>
+          <span class="cat-name">Boxing</span>
+        </div>
+        <div class="cat-card" onclick="showSection('wrestling')">
+          <span class="cat-icon"><img src="./images/wrestling.png" alt="Wrestling" width="40"></span>
+          <span class="cat-name">Wrestling</span>
+        </div>
+        <div class="cat-card" onclick="showSection('bjj')">
+          <span class="cat-icon"><img src="./images/bjj.png" alt="BJJ" width="40"></span>
+          <span class="cat-name">BJJ</span>
+        </div>
+        <div class="cat-card" onclick="showSection('judo')">
+          <span class="cat-icon"><img src="./images/judo.png" alt="Judo" width="40"></span>
+          <span class="cat-name">Judo</span>
+        </div>
+        <div class="cat-card" onclick="showSection('muaythai')">
+          <span class="cat-icon"><img src="./images/muay-thai.png" alt="Muay Thai" width="40"></span>
+          <span class="cat-name">Muay Thai</span>
+        </div>
+        <div class="cat-card" onclick="showSection('submissions')">
+          <span class="cat-icon"><img src="./images/choke.png" alt="Submissions" width="40"></span>
+          <span class="cat-name">Submissions</span>
+        </div>
+        <div class="cat-card" onclick="showSection('fighters')">
+          <span class="cat-icon"><img src="./images/helmet.png" alt="Fighters" width="40"></span>
+          <span class="cat-name">Legends</span>
+        </div>
+        <div class="cat-card" onclick="showSection('glossary')">
+          <span class="cat-icon"><img src="./images/dictionary.png" alt="Glossary" width="40"></span>
+          <span class="cat-name">Glossary</span>
+        </div>
+      </div>
+
+      <div class="divider"><span class="divider-text">What is combat sports?</span></div>
+
+      <p>Combat sports are competitive athletic activities in which contestants directly oppose each other using techniques from martial arts or combat training. They differ from martial arts broadly in that they operate under structured rules designed for fair competition and fighter safety.</p>
+      <p>From the ancient Olympics of 776 BC — which featured wrestling and pankration — to today's global UFC pay-per-view events, combat sports have evolved into one of the world's most-watched athletic categories.</p>
+
+      <h4>Three Families of Combat Sport</h4>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-title">Striking</div>
+          <div class="topic-card-body">Boxing, Muay Thai, Kickboxing, Karate. Emphasis on punches, kicks, elbows, and knees delivered while standing.</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Grappling</div>
+          <div class="topic-card-body">Wrestling, BJJ, Judo, Sambo. Emphasis on takedowns, control, and submissions on the ground.</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Mixed</div>
+          <div class="topic-card-body">MMA and Combat Sambo blend striking and grappling, demanding competence across all ranges of combat.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MMA ── -->
+    <div class="section" id="section-mma">
+      <div class="sec-header">
+        <span class="sec-tag">Full Coverage</span>
+        <h2>MMA BASICS<br>& POSITIONS</h2>
+        <p>The complete guide to how MMA works — from the stance to the ground.</p>
+      </div>
+
+      <h3>What is MMA?</h3>
+      <p>Mixed Martial Arts (MMA) is a full-contact combat sport allowing a wide variety of fighting techniques from a mixture of martial arts traditions. Contestants may fight standing (striking), in the clinch, or on the ground, making it the most technically demanding of all combat sports.</p>
+
+      <div class="detail-block">
+        <div class="detail-block-title">Origins</div>
+        <p>Modern MMA traces its roots to Brazil's <em>Vale Tudo</em> ("anything goes") matches of the 1920s–80s, popularized by the Gracie family to prove BJJ's dominance. The UFC's debut in 1993 brought the concept to a global audience, and by the 2000s unified rules transformed it from spectacle to sport.</p>
+      </div>
+
+      <h4>Major Organizations</h4>
+      <div class="pill-grid">
+        <span class="pill red">UFC</span>
+        <span class="pill">Bellator</span>
+        <span class="pill">ONE Championship</span>
+        <span class="pill">PFL</span>
+        <span class="pill">Pride FC (historical)</span>
+        <span class="pill">Strikeforce (historical)</span>
+      </div>
+
+      <div class="divider"><span class="divider-text">Fighting Stances</span></div>
+
+      <h3>Standing Positions</h3>
+      <p>Before any exchange, a fighter chooses a stance. Stance determines which hand leads, how weight is distributed, and what offensive and defensive options are available.</p>
+
+      <div class="positions-grid">
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Orthodox</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Left foot forward</div>
+            <div class="pos-item">Right hand is power hand</div>
+            <div class="pos-item">~70% of fighters</div>
+            <div class="pos-item">Left jab leads</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Southpaw</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Right foot forward</div>
+            <div class="pos-item">Left hand is power hand</div>
+            <div class="pos-item">Natural left-handers</div>
+            <div class="pos-item">Creates awkward angles</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Switch</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Alternates stances</div>
+            <div class="pos-item">Generates power both ways</div>
+            <div class="pos-item">Confuses opponents</div>
+            <div class="pos-item">Requires long training</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"><span class="divider-text">The Clinch</span></div>
+
+      <h3>Clinch Positions</h3>
+      <p>The clinch is a standing grappling range where both fighters are in close body contact. Mastery of the clinch separates good fighters from elite ones — it is where takedowns begin, knees land, and control is established.</p>
+
+      <div class="positions-grid">
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Double Underhooks</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Both arms under opponent's</div>
+            <div class="pos-item">Dominant control position</div>
+            <div class="pos-item">Sets up body slams</div>
+            <div class="pos-item">Wrestling base favored</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Over-Under</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">One arm over, one under</div>
+            <div class="pos-item">Most common clinch</div>
+            <div class="pos-item">Both fighters neutral</div>
+            <div class="pos-item">Battle for underhook</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Thai Clinch</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Hands behind head/neck</div>
+            <div class="pos-item">Controls posture down</div>
+            <div class="pos-item">Knees from this range</div>
+            <div class="pos-item">Muay Thai origin</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"><span class="divider-text">Ground Positions</span></div>
+
+      <h3>Ground Positions</h3>
+      <p>Once the fight hits the mat, positional hierarchy becomes critical. The fighter on top does not automatically have the advantage — knowing how to control, advance, or submit from any position is the foundation of grappling in MMA.</p>
+
+      <div class="detail-block">
+        <div class="detail-block-title">Positional Hierarchy</div>
+        <p>From weakest to strongest (for the top/controlling fighter): <strong>Guard → Half Guard → Side Control → Mount → Back Control.</strong> Back control with hooks is considered the highest-value position in MMA grappling.</p>
+      </div>
+
+      <div class="positions-grid">
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Guard</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Bottom fighter controls</div>
+            <div class="pos-item">Legs wrap opponent</div>
+            <div class="pos-item">Many sub attempts</div>
+            <div class="pos-item">Can sweep to top</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Half Guard</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">One leg trapped</div>
+            <div class="pos-item">Transition position</div>
+            <div class="pos-item">Can go either way</div>
+            <div class="pos-item">Underhook battle</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Side Control</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Perpendicular on top</div>
+            <div class="pos-item">Legs free to kick/knee</div>
+            <div class="pos-item">Can strike freely</div>
+            <div class="pos-item">Pass to mount or back</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Mount</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Sitting on opponent's chest</div>
+            <div class="pos-item">Heavy striking range</div>
+            <div class="pos-item">Armbars available</div>
+            <div class="pos-item">Hard to escape</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">Back Control</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Hooks (legs) inside hips</div>
+            <div class="pos-item">Best finishing position</div>
+            <div class="pos-item">Rear naked choke</div>
+            <div class="pos-item">Opponent cannot see</div>
+          </div>
+        </div>
+        <div class="pos-card">
+          <div class="pos-card-header"><div class="pos-card-header-title">North-South</div></div>
+          <div class="pos-card-body">
+            <div class="pos-item">Head-to-toe alignment</div>
+            <div class="pos-item">Less common position</div>
+            <div class="pos-item">Kimura & D'Arce entry</div>
+            <div class="pos-item">Strong control</div>
+          </div>
+        </div>
+      </div>
+
+      <h4>MMA Fighting Style Bases</h4>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-title">Wrestling Base</div>
+          <div class="topic-card-body">Dominant takedowns and top control. Wrestlers bring opponents to the ground on their terms and impose physical pressure.</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">BJJ Base</div>
+          <div class="topic-card-body">Dangerous from the back or guard. BJJ fighters are comfortable — even preferred — on the bottom, hunting submissions constantly.</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Muay Thai Base</div>
+          <div class="topic-card-body">Powerful striking at all ranges with devastating clinch work. The art of eight limbs brings punches, kicks, knees, and elbows.</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Sambo Base</div>
+          <div class="topic-card-body">Combines wrestling takedowns with leg lock attacks. Dominant in throws and often catching opponents in unexpected lower-body submissions.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── UFC ── -->
+    <div class="section" id="section-ufc">
+      <div class="sec-header">
+        <span class="sec-tag">Organization</span>
+        <h2>UFC<br>ENCYCLOPEDIA</h2>
+        <p>The world's premier mixed martial arts organization — history, rules, weight classes, and events.</p>
+      </div>
+
+      <h3>What is the UFC?</h3>
+      <p>The Ultimate Fighting Championship (UFC) is the world's largest MMA promotion, headquartered in Las Vegas, Nevada. Founded in 1993 as a tournament to determine the most effective martial art, it has evolved into a multi-billion dollar sports enterprise operating in over 170 countries.</p>
+      <p>Purchased by Dana White and the Fertitta brothers in 2001 for $2 million, the UFC is now valued at over $10 billion. The organization hosts roughly 40–45 events per year, including Pay-Per-View, Fight Night, and The Ultimate Fighter series.</p>
+
+      <h4>UFC Weight Classes — Men</h4>
+      <table class="weight-table">
+        <thead>
+          <tr>
+            <th>Division</th>
+            <th>Limit (lbs)</th>
+            <th>Limit (kg)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Flyweight</strong></td><td><span class="weight-tag">125 lbs</span></td><td>56.7 kg</td></tr>
+          <tr><td><strong>Bantamweight</strong></td><td><span class="weight-tag">135 lbs</span></td><td>61.2 kg</td></tr>
+          <tr><td><strong>Featherweight</strong></td><td><span class="weight-tag">145 lbs</span></td><td>65.8 kg</td></tr>
+          <tr><td><strong>Lightweight</strong></td><td><span class="weight-tag">155 lbs</span></td><td>70.3 kg</td></tr>
+          <tr><td><strong>Welterweight</strong></td><td><span class="weight-tag">170 lbs</span></td><td>77.1 kg</td></tr>
+          <tr><td><strong>Middleweight</strong></td><td><span class="weight-tag">185 lbs</span></td><td>83.9 kg</td></tr>
+          <tr><td><strong>Light Heavyweight</strong></td><td><span class="weight-tag">205 lbs</span></td><td>93.0 kg</td></tr>
+          <tr><td><strong>Heavyweight</strong></td><td><span class="weight-tag">265 lbs</span></td><td>120.2 kg</td></tr>
+        </tbody>
+      </table>
+
+      <h4>UFC Weight Classes — Women</h4>
+      <table class="weight-table">
+        <thead><tr><th>Division</th><th>Limit (lbs)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Strawweight</strong></td><td><span class="weight-tag">115 lbs</span></td></tr>
+          <tr><td><strong>Flyweight</strong></td><td><span class="weight-tag">125 lbs</span></td></tr>
+          <tr><td><strong>Bantamweight</strong></td><td><span class="weight-tag">135 lbs</span></td></tr>
+        </tbody>
+      </table>
+
+      <h4>Ways to Win</h4>
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">KO</div><div class="topic-card-body">Knockout — opponent loses consciousness from a legal strike.</div></div>
+        <div class="topic-card"><div class="topic-card-title">TKO</div><div class="topic-card-body">Technical knockout — referee stops the fight due to inability to intelligently defend.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Submission</div><div class="topic-card-body">Fighter taps out, verbally submits, or goes unconscious from a choke or joint lock.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Decision</div><div class="topic-card-body">Three judges score the fight. Unanimous, Split, or Majority decision.</div></div>
+        <div class="topic-card"><div class="topic-card-title">DQ</div><div class="topic-card-body">Disqualification for repeated or severe fouls, such as eye gouging or groin strikes.</div></div>
+        <div class="topic-card"><div class="topic-card-title">No Contest</div><div class="topic-card-body">Accidental foul, failed drug test, or external factors render the result void.</div></div>
+      </div>
+    </div>
+
+    <!-- ── SUBMISSIONS ── -->
+    <div class="section" id="section-submissions">
+      <div class="sec-header">
+        <span class="sec-tag">Technique Reference</span>
+        <h2>SUBMISSIONS<br>ENCYCLOPEDIA</h2>
+        <p>Every major choke and joint lock, organized by type and entry.</p>
+      </div>
+
+      <p>A submission is a technique applied to force an opponent to "tap out" — signal defeat — or risk injury (joint damage) or unconsciousness (blood/air choke). Submissions fall into two families: chokes and joint locks.</p>
+
+      <h3>Chokes</h3>
+      <p>Chokes work by compressing the carotid arteries (blood choke) or trachea (air choke), causing unconsciousness within 3–10 seconds for blood chokes. Blood chokes are far more effective and less painful than air chokes.</p>
+
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">Rear Naked Choke</div><div class="topic-card-body">The most finished submission in MMA. Applied from back control, one arm across the throat, the other arm locks behind the head. Pure blood choke — lights out in seconds.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Guillotine Choke</div><div class="topic-card-body">Applied when an opponent shoots for a takedown. The arm wraps under the chin and squeezes up. Can be finished standing or from guard position.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Triangle Choke</div><div class="topic-card-body">Applied with the legs from guard. One arm and the neck are trapped inside a triangle formed by the attacker's legs, cutting off blood flow.</div></div>
+        <div class="topic-card"><div class="topic-card-title">D'Arce Choke</div><div class="topic-card-body">A no-gi variation of the arm triangle. The arm thread under the armpit and across the neck, typically from side control or half guard scrambles.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Anaconda Choke</div><div class="topic-card-body">Similar to the D'Arce but the arm goes under both the neck and arm, pulling the opponent into a forward roll for extra pressure.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Von Flue Choke</div><div class="topic-card-body">A rare and spectacular counter to a guillotine. When an opponent holds a guillotine from guard, the top fighter applies pressure with the shoulder to choke them out.</div></div>
+      </div>
+
+      <div class="divider"><span class="divider-text">Joint Locks</span></div>
+
+      <h3>Joint Locks</h3>
+      <p>Joint locks hyperextend or rotate joints beyond their natural range of motion. They force a tap via pain and the threat of structural damage to ligaments and tendons.</p>
+
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">Armbar</div><div class="topic-card-body">The most iconic submission. The elbow joint is hyperextended across the hip or thigh. Available from mount, guard, side control, and back.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Kimura</div><div class="topic-card-body">Two-on-one shoulder lock with the arm bent behind the back. Named after Masahiko Kimura. Sets up from half guard, north-south, and standing.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Americana</div><div class="topic-card-body">A reverse Kimura — the arm is bent at 90° and rotated toward the head. Most common from mount and side control against a less experienced opponent.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Omoplata</div><div class="topic-card-body">A shoulder lock applied with the legs from guard. The leg traps the arm and the hips rotate to apply pressure. Also serves as a sweep setup.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Heel Hook</div><div class="topic-card-body">The most dangerous leg lock. The heel is trapped and rotated to torque the knee. Inside and outside variations exist — the inside heel hook has ended many careers.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Knee Bar</div><div class="topic-card-body">The knee equivalent of an armbar. The joint is hyperextended. Allowed in advanced BJJ competition and in MMA — hard to defend when entered from leg entanglement.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Toe Hold</div><div class="topic-card-body">Rotates the ankle by gripping the foot. A figure-four grip applies pressure. Often comes as a natural reaction when a heel hook attempt is defended.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Wrist Lock</div><div class="topic-card-body">Rotates or bends the wrist joint. Subtle and surprising — often caught accidentally during other grappling exchanges, especially in BJJ competition.</div></div>
+      </div>
+    </div>
+
+    <!-- ── BJJ ── -->
+    <div class="section" id="section-bjj">
+      <div class="sec-header">
+        <span class="sec-tag">Grappling Art</span>
+        <h2>BRAZILIAN<br>JIU-JITSU</h2>
+        <p>The gentle art. Ground fighting mastery built on leverage, not strength.</p>
+      </div>
+
+      <p>Brazilian Jiu-Jitsu (BJJ) is a grappling martial art and combat sport focused on ground fighting and submission holds. Its core philosophy: a smaller, weaker person can successfully defend against a larger opponent using leverage, technique, and positional control.</p>
+
+      <div class="detail-block">
+        <div class="detail-block-title">The Gracie Legacy</div>
+        <p>BJJ was developed in Brazil from Judo techniques taught by Mitsuyo Maeda to Carlos Gracie in 1917. The Gracie family — particularly Hélio Gracie — adapted and refined the art for smaller individuals, emphasizing ground fighting over throws. The family's public challenge matches proved its effectiveness against all other styles.</p>
+      </div>
+
+      <h4>The Belt System</h4>
+      <div style="max-width: 500px; margin: 1rem 0 2rem;">
+        <div class="belt-row"><div class="belt-color" style="background:#fff; border: 2px solid #ccc;"></div><span class="belt-name">White Belt</span><span class="belt-time">Beginner — learning to survive</span></div>
+        <div class="belt-row"><div class="belt-color" style="background:#4a7fd4;"></div><span class="belt-name">Blue Belt</span><span class="belt-time">~2 years — foundations solid</span></div>
+        <div class="belt-row"><div class="belt-color" style="background:#7c4dab;"></div><span class="belt-name">Purple Belt</span><span class="belt-time">~4–5 years — developing style</span></div>
+        <div class="belt-row"><div class="belt-color" style="background:#8b4513;"></div><span class="belt-name">Brown Belt</span><span class="belt-time">~7 years — near mastery</span></div>
+        <div class="belt-row"><div class="belt-color" style="background:#1a1a1a;"></div><span class="belt-name">Black Belt</span><span class="belt-time">~10 years — master</span></div>
+        <div class="belt-row"><div class="belt-color" style="background: repeating-linear-gradient(90deg, #c00 0 20px, #000 20px 40px);"></div><span class="belt-name">Coral Belt</span><span class="belt-time">7th–8th degree — rare honor</span></div>
+        <div class="belt-row"><div class="belt-color" style="background:#c8381e;"></div><span class="belt-name">Red Belt</span><span class="belt-time">9th–10th degree — grandmaster</span></div>
+      </div>
+
+      <h4>Guard Variations</h4>
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">Closed Guard</div><div class="topic-card-body">Legs locked around opponent's waist. Defensive and offensive — controls posture, hunts for armbars, triangles, and sweeps.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Open Guard</div><div class="topic-card-body">Legs unlocked but active. Allows more dynamic movement and access to many guard variations.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Butterfly Guard</div><div class="topic-card-body">Feet hooked inside opponent's thighs. Powerful sweeping guard — lifts opponents with the legs to reverse position.</div></div>
+        <div class="topic-card"><div class="topic-card-title">De La Riva</div><div class="topic-card-body">One leg wrapped around the outside of the opponent's thigh. Entry to back takes, leg locks, and the berimbolo series.</div></div>
+        <div class="topic-card"><div class="topic-card-title">X Guard</div><div class="topic-card-body">Both legs form an "X" beneath the standing opponent. Excellent for off-balancing and transitioning to leg attacks.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Deep Half Guard</div><div class="topic-card-body">Deeply underneath the opponent. Creates access to waist lock sweeps and back takes. Hard to submit from here.</div></div>
+      </div>
+    </div>
+
+    <!-- ── WRESTLING ── -->
+    <div class="section" id="section-wrestling">
+      <div class="sec-header">
+        <span class="sec-tag">Grappling Base</span>
+        <h2>WRESTLING<br>ENCYCLOPEDIA</h2>
+        <p>The most proven combat sports base. Takedowns, control, and relentless pressure.</p>
+      </div>
+      <p>Wrestling is the oldest combat sport, present at the ancient Olympics and practiced across every human culture. In modern MMA, a wrestling base is considered among the most valuable — it gives fighters control over where the fight takes place.</p>
+      <h4>Wrestling Styles</h4>
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">Freestyle</div><div class="topic-card-body">International competition style. Leg attacks and throws allowed. Both upper and lower body fair game. Used in Olympic wrestling.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Greco-Roman</div><div class="topic-card-body">No attacks below the waist. Emphasis on upper body throws and clinch domination. Produces tremendous upper body strength.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Folkstyle</div><div class="topic-card-body">American collegiate and scholastic wrestling. Emphasis on control, riding, and escapes on the mat. Most US MMA wrestlers come from this background.</div></div>
+      </div>
+      <h4>Core Techniques</h4>
+      <div class="pill-grid">
+        <span class="pill">Double Leg</span><span class="pill">Single Leg</span><span class="pill">High Crotch</span><span class="pill">Fireman's Carry</span><span class="pill">Body Lock</span><span class="pill">Suplex</span><span class="pill">Ankle Pick</span><span class="pill">Snap Down</span><span class="pill">Sprawl</span>
+      </div>
+      <div class="detail-block">
+        <div class="detail-block-title">The Sprawl — Essential MMA Defense</div>
+        <p>The sprawl is wrestling's most important defensive technique in MMA. When an opponent shoots for a takedown, the defender throws their hips backward and down, driving the opponent's head into the mat and negating the attempt. Every MMA fighter must develop a reliable sprawl.</p>
+      </div>
+    </div>
+
+    <!-- ── MUAY THAI ── -->
+    <div class="section" id="section-muaythai">
+      <div class="sec-header">
+        <span class="sec-tag">Striking Art</span>
+        <h2>MUAY THAI</h2>
+        <p>The Art of Eight Limbs — punches, kicks, elbows, and knees.</p>
+      </div>
+      <p>Muay Thai is the national sport and martial art of Thailand, practiced for centuries as military combat before becoming a competitive sport. It earns the name "Art of Eight Limbs" for its use of fists (2), elbows (2), knees (2), and shins/feet (2) as weapons.</p>
+      <h4>Eight Weapons</h4>
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">Punches</div><div class="topic-card-body">Jab, cross, hook, uppercut. The setup tools — Muay Thai punching is effective but secondary to kicks and knees.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Kicks</div><div class="topic-card-body">Powerful roundhouse kicks delivered with the shin (not the foot). Low kicks, body kicks, and head kicks — the shin conditioned through bone hardening.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Elbows</div><div class="topic-card-body">Razor-sharp close-range strikes. Cut opponents, create blood stoppages. Horizontal, upward, downward, and spinning variations.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Knees</div><div class="topic-card-body">Devastating in the clinch and from range. Jumping knees (the "Teep" in Thai) are a signature weapon — can stop opponents clean.</div></div>
+      </div>
+      <h4>The Muay Thai Clinch</h4>
+      <p>Unlike boxing's clinch (broken up by referees), the Muay Thai clinch is an active, offensive position. Control the neck, pull the posture down, and deliver knees to the body and head. Clinch specialists like Diesellek have built entire careers from this range alone.</p>
+    </div>
+
+    <!-- ── BOXING ── -->
+    <div class="section" id="section-boxing">
+      <div class="sec-header">
+        <span class="sec-tag">Sweet Science</span>
+        <h2>BOXING<br>ENCYCLOPEDIA</h2>
+        <p>The oldest modern combat sport. Footwork, timing, and the four punches.</p>
+      </div>
+      <p>Boxing is a combat sport in which two fighters throw punches at each other within a roped square ring, wearing padded gloves. It is one of the oldest and most globally recognized sports, with professional boxing operating since the 19th century.</p>
+      <h4>The Four Punches</h4>
+      <div class="topic-grid">
+        <div class="topic-card"><div class="topic-card-title">Jab (1)</div><div class="topic-card-body">Lead hand, straight punch. Fast, low-commitment. Sets range, keeps opponent honest, and sets up power shots.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Cross (2)</div><div class="topic-card-body">Rear hand, straight punch. The primary power punch. Travels across the body with full hip rotation for maximum force.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Hook (3)</div><div class="topic-card-body">Lead or rear hand in a looping arc. Targets the jaw or body. The classic knockout punch — comes from the blind side.</div></div>
+        <div class="topic-card"><div class="topic-card-title">Uppercut (4)</div><div class="topic-card-body">Vertical rising punch targeting the chin. Effective in close quarters. The "check hook" as a counter is a boxing classic.</div></div>
+      </div>
+      <h4>Defense</h4>
+      <div class="pill-grid">
+        <span class="pill">Slip (inside/outside)</span><span class="pill">Roll</span><span class="pill">Block</span><span class="pill">Parry</span><span class="pill">Footwork</span><span class="pill">Overhand Cover</span>
+      </div>
+    </div>
+
+    <!-- ── JUDO ── -->
+    <div class="section" id="section-judo">
+      <div class="sec-header">
+        <span class="sec-tag">Olympic Sport</span>
+        <h2>JUDO<br>ENCYCLOPEDIA</h2>
+        <p>The gentle way — throws, pins, and Olympic glory.</p>
+      </div>
+      <p>Judo was created in 1882 by Jigoro Kano as a martial art and educational system derived from jujutsu. It became an Olympic sport in 1964. The word means "gentle way" — not because it is soft, but because it uses an opponent's force against them rather than meeting force with force.</p>
+      <h4>Core Throws</h4>
+      <div class="pill-grid">
+        <span class="pill">Osoto Gari</span><span class="pill">Ouchi Gari</span><span class="pill">Uchi Mata</span><span class="pill">Harai Goshi</span><span class="pill">Tai Otoshi</span><span class="pill">Seoi Nage</span><span class="pill">Tomoe Nage</span><span class="pill">Sumi Gaeshi</span>
+      </div>
+      <h4>Belt System</h4>
+      <div class="pill-grid">
+        <span class="pill">White</span><span class="pill">Yellow</span><span class="pill">Orange</span><span class="pill">Green</span><span class="pill">Blue</span><span class="pill">Brown</span><span class="pill red">Black</span>
+      </div>
+      <div class="detail-block">
+        <div class="detail-block-title">Judo's Influence on MMA</div>
+        <p>Judokas like Ronda Rousey and Fedor Emelianenko brought throwing and hip-throw-based takedowns into MMA, demonstrating that world-class throws work even against resisting fighters. The over-the-shoulder throw (seoi nage) and hip throw (o-goshi) are now part of the MMA toolbox.</p>
+      </div>
+    </div>
+
+    <!-- ── FIGHTERS ── -->
+    <div class="section" id="section-fighters">
+      <div class="sec-header">
+        <span class="sec-tag">Hall of Champions</span>
+        <h2>FAMOUS<br>FIGHTERS</h2>
+        <p>The legends who shaped combat sports history.</p>
+      </div>
+
+      <h4>UFC All-Time Greats</h4>
+      <div class="fighters-grid">
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/gsp.png" alt="Georges St-Pierre" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Georges St-Pierre</div>
+            <div class="fighter-nickname">"Rush"</div>
+            <div class="fighter-desc">Two-division UFC champion. Widely considered the greatest welterweight of all time. Dominant wrestling-based game with elite striking.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/jon-jones.png" alt="Jon Jones" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Jon Jones</div>
+            <div class="fighter-nickname">"Bones"</div>
+            <div class="fighter-desc">Longest-reigning UFC LHW champion. Unparalleled reach, creativity, and fight IQ. Considered the most naturally gifted MMA fighter ever.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/anderson-silva.png" alt="Anderson Silva" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Anderson Silva</div>
+            <div class="fighter-nickname">"The Spider"</div>
+            <div class="fighter-desc">Legendary UFC MW champion. Held the longest title reign in UFC history (2,457 days). Matrix-like evasive striking style.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/khabib.png" alt="Khabib Nurmagomedov" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Khabib Nurmagomedov</div>
+            <div class="fighter-nickname">"The Eagle"</div>
+            <div class="fighter-desc">Undefeated (29-0) UFC Lightweight champion. Sambo-based wrestling with suffocating top control. Retired as one of the P4P best ever.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/amanda-nunes.png" alt="Amanda Nunes" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Amanda Nunes</div>
+            <div class="fighter-nickname">"The Lioness"</div>
+            <div class="fighter-desc">First fighter (M or F) to hold two UFC titles simultaneously. Dominant power striker with elite submission game.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/demetrious-johnson.png" alt="Demetrious Johnson" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Demetrious Johnson</div>
+            <div class="fighter-nickname">"Mighty Mouse"</div>
+            <div class="fighter-desc">UFC's most prolific title defender (11 consecutive). Fastest, most technical MMA fighter ever at 125 lbs.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"><span class="divider-text">BJJ Legends</span></div>
+      <div class="fighters-grid">
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/helio-gracie.png" alt="Hélio Gracie" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Hélio Gracie</div>
+            <div class="fighter-nickname">Founder</div>
+            <div class="fighter-desc">Co-developed Brazilian Jiu-Jitsu. Modified Judo for smaller, weaker practitioners. Fought publicly into his 60s.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/roger-gracie.png" alt="Roger Gracie" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Roger Gracie</div>
+            <div class="fighter-nickname">"The Greatest"</div>
+            <div class="fighter-desc">10-time World BJJ Champion. Renowned for submitting the best black belts in the world using only the most fundamental techniques.</div>
+          </div>
+        </div>
+        <div class="fighter-card">
+          <div class="fighter-avatar">
+            <img src="./images/marcelo-garcia.png" alt="Marcelo Garcia" width="40">
+          </div>
+          <div class="fighter-info">
+            <div class="fighter-name">Marcelo Garcia</div>
+            <div class="fighter-nickname">"MG"</div>
+            <div class="fighter-desc">5-time ADCC champion. Popularized the guillotine and rear naked choke as primary weapons. Widely considered the best grappler of his era.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GLOSSARY ── -->
+    <div class="section" id="section-glossary">
+      <div class="sec-header">
+        <span class="sec-tag">A – Z Reference</span>
+        <h2>COMBAT SPORTS<br>GLOSSARY</h2>
+        <p>Key terms every fighter and fan should know.</p>
+      </div>
+
+      <div id="glossary-filter" style="margin-bottom: 1.5rem;">
+        <input type="text" id="gloss-search" placeholder="Filter terms…" style="font-family: var(--font-condensed); font-size: 14px; font-weight: 500; background: var(--off); border: 1px solid var(--border); border-radius: 4px; padding: 8px 14px; width: 260px; outline: none; color: var(--black);" oninput="filterGlossary(this.value)">
+      </div>
+
+      <div id="glossary-list">
+      </div>
+    </div>
+
+    <!-- ── TOOLS ── -->
+    <div class="section" id="section-tools">
+      <div class="sec-header">
+        <span class="sec-tag">Coming Soon</span>
+        <h2>INTERACTIVE<br>TOOLS</h2>
+        <p>Training calculators, trackers, and visualization tools — in development.</p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Weight Class Calculator</div>
+          <div class="tool-desc">Enter your weight to find your natural division across UFC, ONE, and Bellator rules.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Reach Advantage</div>
+          <div class="tool-desc">Calculate reach differential between two fighters and understand its tactical impact.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Submission Flowcharts</div>
+          <div class="tool-desc">Interactive decision trees for submission chains — from guard, side control, and back control.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Fighter Comparison</div>
+          <div class="tool-desc">Side-by-side statistical comparison of UFC fighters — reach, height, finish rate, record.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Training Journal</div>
+          <div class="tool-desc">Log your sessions, track rounds, techniques drilled, and sparring notes over time.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Tournament Bracket</div>
+          <div class="tool-desc">Generate and manage tournament brackets for 4, 8, or 16-person events.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">BMI & Fight Weight</div>
+          <div class="tool-desc">Calculate your BMI and ideal walking weight for your targeted competition division.</div>
+        </div>
+        <div class="tool-card">
+          <span class="cs-badge">Coming Soon</span>
+          <div class="tool-title">Rule Set Comparison</div>
+          <div class="tool-desc">Compare rules across UFC, ONE Championship, ADCC, and IBJJF — what's legal and where.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const glossaryData = [
+  { term: 'Americana', def: 'A shoulder lock where the arm is bent at 90° and rotated toward the head. Applied from mount or side control.'},
+  { term: 'Armbar', def: 'A joint lock hyperextending the elbow across the hip. Available from mount, guard, side control, and back.'},
+  { term: 'Back Control', def: 'The highest-value grappling position. Attacker is behind the opponent with hooks inside the hips. Primary finish: rear naked choke.'},
+  { term: 'Butterfly Guard', def: 'Guard variation with feet hooked inside the opponent\'s thighs. Strong sweeping guard.'},
+  { term: 'Clinch', def: 'Close-range standing grappling position where both fighters are in body contact. Entry point for takedowns, knees, and trips.'},
+  { term: 'D\'Arce Choke', def: 'Arm-triangle choke variation where the arm threads under the armpit and across the neck. Strong from scrambles and half guard.'},
+  { term: 'Decision', def: 'A fight result determined by three judges\' scorecards when neither fighter is stopped. Unanimous, Split, or Majority.'},
+  { term: 'Double Leg', def: 'A core wrestling takedown shooting both arms around the opponent\'s legs to drive them to the mat.'},
+  { term: 'Guard', def: 'Ground position where the bottom fighter uses their legs to control the opponent on top. Many variations exist.'},
+  { term: 'Guillotine', def: 'A choke applied when an opponent shoots in, trapping the neck under the arm. Can be finished standing or from guard.'},
+  { term: 'Half Guard', def: 'A transitional ground position where one leg is trapped between the opponent\'s legs. Battle for underhooks determines outcome.'},
+  { term: 'Heel Hook', def: 'A dangerous leg lock rotating the heel to torque the knee. Inside heel hooks carry high injury risk.'},
+  { term: 'Jab', def: 'The lead hand straight punch. Fast, low-commitment. Used for range finding and setting up power shots.'},
+  { term: 'Kimura', def: 'A two-on-one shoulder lock named after Masahiko Kimura. Applied by bending the arm behind the back.'},
+  { term: 'KO', def: 'Knockout — the opponent is rendered unconscious by a legal strike.'},
+  { term: 'Mount', def: 'Dominant ground position with the attacker sitting on the opponent\'s chest. Heavy strikes, armbars available.'},
+  { term: 'North-South', def: 'Ground control position where fighters are aligned head-to-toe. Entry point for kimuras and D\'Arce chokes.'},
+  { term: 'Omoplata', def: 'A shoulder lock applied using the legs from guard. Also serves as a sweep setup.'},
+  { term: 'Orthodox', def: 'Fighting stance with the left foot forward and right hand as the power hand. Used by approximately 70% of fighters.'},
+  { term: 'Rear Naked Choke', def: 'The most finished submission in MMA. Applied from back control — one arm across the throat, locked by the other arm behind the head.'},
+  { term: 'Side Control', def: 'Ground control position perpendicular to the opponent. Legs are free, striking is easy, and transitions to mount or back are available.'},
+  { term: 'Single Leg', def: 'Wrestling takedown targeting one of the opponent\'s legs. Lifted and controlled to bring them to the mat.'},
+  { term: 'Southpaw', def: 'Fighting stance with the right foot forward. Natural position for left-handed fighters. Creates awkward angle matchups.'},
+  { term: 'Sprawl', def: 'Defensive wrestling technique countering a takedown by throwing hips back and down, driving the opponent\'s head to the mat.'},
+  { term: 'Submission', def: 'A technique forcing an opponent to tap out or risk injury/unconsciousness. Two families: chokes and joint locks.'},
+  { term: 'Thai Clinch', def: 'Clinch position with hands locked behind the opponent\'s neck/head, controlling posture down for knee strikes.'},
+  { term: 'TKO', def: 'Technical knockout — the referee stops the fight due to a fighter\'s inability to intelligently defend themselves.'},
+  { term: 'Triangle Choke', def: 'A blood choke applied with the legs from guard, trapping one arm and the neck inside a triangular leg position.'},
+  { term: 'Underhook', def: 'Clinch position with one arm threaded under the opponent\'s armpit. Control the underhook = control the clinch.'},
+  { term: 'Vale Tudo', def: 'Portuguese for "anything goes." Early Brazilian no-holds-barred fighting that directly preceded modern MMA.'},
+  { term: 'Whizzer', def: 'A defensive overhook counter to an underhook in wrestling. Used to defend single legs and control the clinch.'},
+  { term: 'X Guard', def: 'BJJ guard variation with both legs forming an "X" beneath a standing opponent. Strong for off-balancing and leg attacks.'},
+];
+
+function renderGlossary(filter = '') {
+  const container = document.getElementById('glossary-list');
+  const filtered = glossaryData.filter(g =>
+    g.term.toLowerCase().includes(filter.toLowerCase()) ||
+    g.def.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<p style="color: var(--muted); font-style: italic;">No terms found.</p>';
+    return;
+  }
+
+  let html = '';
+  let lastLetter = '';
+  filtered.forEach(g => {
+    const first = g.term[0].toUpperCase();
+    if (!filter && first !== lastLetter) {
+      lastLetter = first;
+      html += `<div style="font-family:var(--font-display);font-size:32px;color:var(--border);margin:1.5rem 0 0.5rem;line-height:1;">${first}</div>`;
+    }
+    html += `<div style="display:flex;gap:1rem;padding:10px 0;border-bottom:1px solid var(--border);align-items:baseline;">
+      <div style="font-family:var(--font-condensed);font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;min-width:160px;color:var(--black);">${g.term}</div>
+      <div style="font-size:14px;color:#444;flex:1;">${g.def}</div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+function filterGlossary(val) { renderGlossary(val); }
+renderGlossary();
+
+// ── SECTION SWITCHING ──
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+
+  const target = document.getElementById('section-' + id);
+  if (target) target.classList.add('active');
+
+  document.querySelectorAll('.sidebar-link').forEach(l => {
+    if (l.getAttribute('onclick') && l.getAttribute('onclick').includes("'" + id + "'")) {
+      l.classList.add('active');
+    }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(l => {
+    if (l.getAttribute('data-section') === id) l.classList.add('active');
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+}
+
+// ── SEARCH ──
+const searchIndex = [
+  { label: 'MMA Basics & Positions', section: 'mma', keywords: ['mma','mixed martial arts','stance','guard','clinch','positions','ground'] },
+  { label: 'UFC Encyclopedia', section: 'ufc', keywords: ['ufc','ultimate fighting','weight class','flyweight','bantamweight','ko','tko'] },
+  { label: 'Submissions', section: 'submissions', keywords: ['submission','choke','armbar','kimura','heel hook','triangle','guillotine','rear naked'] },
+  { label: 'Brazilian Jiu-Jitsu', section: 'bjj', keywords: ['bjj','jiu-jitsu','gracie','belt','guard','de la riva','butterfly'] },
+  { label: 'Wrestling', section: 'wrestling', keywords: ['wrestling','double leg','single leg','sprawl','takedown','greco','folkstyle'] },
+  { label: 'Muay Thai', section: 'muaythai', keywords: ['muay thai','eight limbs','elbow','knee','thai clinch','kicks','teep'] },
+  { label: 'Boxing', section: 'boxing', keywords: ['boxing','jab','cross','hook','uppercut','footwork','slip'] },
+  { label: 'Judo', section: 'judo', keywords: ['judo','throw','osoto','uchi mata','kano','seoi nage'] },
+  { label: 'Famous Fighters', section: 'fighters', keywords: ['gsp','jones','silva','khabib','nunes','gracie','fighters','legends'] },
+  { label: 'Glossary', section: 'glossary', keywords: ['glossary','terms','dictionary','words'] },
+  { label: 'Interactive Tools', section: 'tools', keywords: ['tools','calculator','tracker','bracket','comparison'] },
+];
+
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  if (!q) { searchResults.style.display = 'none'; return; }
+
+  const matches = searchIndex.filter(item =>
+    item.label.toLowerCase().includes(q) ||
+    item.keywords.some(k => k.includes(q))
+  );
+
+  if (!matches.length) { searchResults.style.display = 'none'; return; }
+
+  searchResults.innerHTML = matches.slice(0,6).map(m =>
+    `<div class="search-result-item" onclick="showSection('${m.section}');searchResults.style.display='none';searchInput.value='';">
+      <div class="sri-title">${m.label}</div>
+      <div class="sri-section">Encyclopedia</div>
+    </div>`
+  ).join('');
+  searchResults.style.display = 'block';
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-search')) searchResults.style.display = 'none';
+});
+
+// init active sidebar
+showSection('home');
+</script>
+</body>
+</html>
