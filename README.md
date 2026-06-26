@@ -1,1 +1,1 @@
-# combatpedia
+# [combatpedia](https://gitussr.github.io/combatpedia/)
